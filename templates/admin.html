@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            ADMIN
+        </div>
+
+        <h1>
+            Application Dashboard
+        </h1>
+
+
+        <div class="stats">
+
+            <div>
+                <b>
+                    {{ users }}
+                </b>
+
+                <span>
+                    Users
+                </span>
+            </div>
+
+
+            <div>
+                <b>
+                    {{ apps }}
+                </b>
+
+                <span>
+                    Applications
+                </span>
+            </div>
+
+
+            <div>
+                <b>
+                    {{ approved }}
+                </b>
+
+                <span>
+                    Approved
+                </span>
+            </div>
+
+
+            <div>
+                <b>
+                    {{ rejected }}
+                </b>
+
+                <span>
+                    Rejected
+                </span>
+            </div>
+
+        </div>
+
+
+        <h2 class="mt">
+            Recent Applications
+        </h2>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            User
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Prediction
+                        </th>
+
+                        <th>
+                            Probability
+                        </th>
+
+                        <th>
+                            Risk
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for application in recent %}
+
+                    <tr>
+
+                        <td>
+                            LN{{ "%04d"|format(application["id"]) }}
+                        </td>
+
+                        <td>
+                            {{ application["name"] }}
+                        </td>
+
+                        <td>
+                            {{ application["email"] }}
+                        </td>
+
+                        <td>
+                            {{ application["prediction"] }}
+                        </td>
+
+                        <td>
+                            {{ application["probability"] }}%
+                        </td>
+
+                        <td>
+                            {{ application["risk_score"] }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <p class="note">
+            For production use, protect this route with proper
+            administrator authentication and role-based access.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

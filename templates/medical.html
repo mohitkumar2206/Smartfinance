@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}
+Medical Insurance | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container narrow">
+
+        <div class="eyebrow">
+            MEDICAL INSURANCE
+        </div>
+
+        <h1>
+            Premium Estimate
+        </h1>
+
+        <p class="muted">
+            Explore an academic estimate based on selected
+            applicant information.
+        </p>
+
+
+        <form
+            method="post"
+            class="form-card"
+        >
+
+            <div class="grid2">
+
+                <label>
+                    Age
+
+                    <input
+                        type="number"
+                        name="age"
+                        min="1"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Dependents
+
+                    <input
+                        type="number"
+                        name="dependents"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    BMI
+
+                    <input
+                        type="number"
+                        name="bmi"
+                        step="0.1"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Smoker
+
+                    <select name="smoker">
+
+                        <option>
+                            No
+                        </option>
+
+                        <option>
+                            Yes
+                        </option>
+
+                    </select>
+                </label>
+
+            </div>
+
+
+            <button class="btn full">
+                Estimate Premium
+            </button>
+
+
+            {% if result is not none %}
+
+            <div class="calc-result">
+
+                Estimated annual premium:
+
+                <b>
+                    ₹{{ "{:,.2f}".format(result) }}
+                </b>
+
+            </div>
+
+            {% endif %}
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

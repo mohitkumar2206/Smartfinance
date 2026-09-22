@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Us | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container two">
+
+        <div>
+
+            <div class="eyebrow">
+                CONTACT US
+            </div>
+
+            <h1>
+                Let's connect.
+            </h1>
+
+            <p class="muted">
+                Have a question about SmartFinance or its services?
+                Send us a message.
+            </p>
+
+
+            <div class="contact-line">
+
+                <b>
+                    Email
+                </b>
+
+                <span>
+                    mohitki7780264@gmail.com
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <form
+            method="post"
+            class="form-card"
+        >
+
+            <label>
+                Name
+
+                <input
+                    type="text"
+                    name="name"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Email
+
+                <input
+                    type="email"
+                    name="email"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Subject
+
+                <input
+                    type="text"
+                    name="subject"
+                >
+            </label>
+
+
+            <label>
+                Message
+
+                <textarea
+                    name="message"
+                    rows="6"
+                    required
+                ></textarea>
+            </label>
+
+
+            <button class="btn full">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+SMARTFINANCE PROJECT STRUCTURE
+==============================
+
+
+SmartFinance/
+│
+├── app.py
+│       Main Flask application.
+│       Handles routes, login, database operations,
+│       loan prediction and insurance calculations.
+│
+├── requirements.txt
+│       Python packages required by the project.
+│
+├── README.md
+│       Project setup and usage instructions.
+│
+├── PROJECT_STRUCTURE.txt
+│       Explanation of the project folders and files.
+│
+├── run_windows.bat
+│       Optional Windows setup/run script.
+│
+│
+├── data/
+│   └── loan_data.csv
+│           Training dataset for loan approval.
+│
+│
+├── models/
+│   └── loan_model.pkl
+│           Saved machine-learning pipeline.
+│
+│
+├── ml/
+│   └── train_model.py
+│           Code used to train the loan model.
+│
+│
+├── templates/
+│   ├── base.html
+│   │       Common navigation and footer.
+│   │
+│   ├── index.html
+│   │       Home page.
+│   │
+│   ├── login.html
+│   │       Login page.
+│   │
+│   ├── register.html
+│   │       Registration page.
+│   │
+│   ├── dashboard.html
+│   │       User dashboard and application history.
+│   │
+│   ├── loan.html
+│   │       Loan application form.
+│   │
+│   ├── loan_result.html
+│   │       ML prediction result.
+│   │
+│   ├── emi.html
+│   │       EMI calculator page.
+│   │
+│   ├── vehicle.html
+│   │       Vehicle insurance estimate.
+│   │
+│   ├── medical.html
+│   │       Medical insurance estimate.
+│   │
+│   ├── contact.html
+│   │       Contact page.
+│   │
+│   └── admin.html
+│           Basic administrator dashboard.
+│
+│
+└── static/
+    │
+    ├── css/
+    │   └── style.css
+    │           Website design and responsive layout.
+    │
+    └── js/
+        └── main.js
+                EMI calculator JavaScript.

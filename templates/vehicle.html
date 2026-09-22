@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}
+Vehicle Insurance | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container narrow">
+
+        <div class="eyebrow">
+            VEHICLE INSURANCE
+        </div>
+
+        <h1>
+            Premium Estimate
+        </h1>
+
+        <p class="muted">
+            Explore an academic rule-based estimate using
+            basic vehicle and driver information.
+        </p>
+
+
+        <form
+            method="post"
+            class="form-card"
+        >
+
+            <div class="grid2">
+
+                <label>
+                    Driver Age
+
+                    <input
+                        type="number"
+                        name="age"
+                        min="18"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Vehicle Age
+
+                    <input
+                        type="number"
+                        name="vehicle_age"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Vehicle Value (₹)
+
+                    <input
+                        type="number"
+                        name="value"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Previous Claims
+
+                    <input
+                        type="number"
+                        name="claims"
+                        min="0"
+                        required
+                    >
+                </label>
+
+            </div>
+
+
+            <button class="btn full">
+                Estimate Premium
+            </button>
+
+
+            {% if result is not none %}
+
+            <div class="calc-result">
+
+                Estimated annual premium:
+
+                <b>
+                    ₹{{ "{:,.2f}".format(result) }}
+                </b>
+
+            </div>
+
+            {% endif %}
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

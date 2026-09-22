@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}
+Loan Result | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container result">
+
+        <div class="eyebrow">
+            ASSESSMENT COMPLETE
+        </div>
+
+        <h1>
+            Loan Assessment
+        </h1>
+
+
+        <div class="result-main">
+
+            <div class="result-box">
+
+                <span class="muted">
+                    ML Prediction
+                </span>
+
+                <strong class="{{ prediction|lower }}">
+                    {{ prediction }}
+                </strong>
+
+                <span>
+                    Model confidence:
+                    {{ probability }}%
+                </span>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <span class="muted">
+                    Financial Risk Score
+                </span>
+
+                <strong>
+                    {{ risk }}/100
+                </strong>
+
+                <span>
+                    {% if risk >= 70 %}
+                        Lower project risk
+                    {% elif risk >= 45 %}
+                        Moderate project risk
+                    {% else %}
+                        Higher project risk
+                    {% endif %}
+                </span>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <span class="muted">
+                    Credit Score Supplied
+                </span>
+
+                <strong>
+                    {{ cibil }}
+                </strong>
+
+                <span>
+                    Used as one model feature.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notice">
+
+            <strong>
+                Important:
+            </strong>
+
+            This is a project prediction, not an official
+            bank decision or official CIBIL score.
+
+        </div>
+
+
+        <div class="actions">
+
+            <a
+                class="btn"
+                href="{{ url_for('dashboard') }}"
+            >
+                Go to Dashboard
+            </a>
+
+
+            <a
+                class="btn ghost-dark"
+                href="{{ url_for('loan') }}"
+            >
+                New Assessment
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

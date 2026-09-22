@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+Registration | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="auth">
+    <div class="form-card">
+
+        <div class="eyebrow">
+            CREATE ACCOUNT
+        </div>
+
+        <h1>
+            Registration
+        </h1>
+
+        <p class="muted">
+            Create your SmartFinance account.
+        </p>
+
+
+        <form method="post">
+
+            <label>
+                Full Name
+
+                <input
+                    type="text"
+                    name="name"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Email
+
+                <input
+                    type="email"
+                    name="email"
+                    required
+                >
+            </label>
+
+
+            <label>
+                Password
+
+                <input
+                    type="password"
+                    name="password"
+                    minlength="6"
+                    required
+                >
+            </label>
+
+
+            <button class="btn full">
+                Register
+            </button>
+
+        </form>
+
+
+        <p class="center">
+            Already registered?
+
+            <a href="{{ url_for('login') }}">
+                Login
+            </a>
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

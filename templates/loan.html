@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}
+Loan Application | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container narrow">
+
+        <div class="eyebrow">
+            LOAN APPROVAL
+        </div>
+
+        <h1>
+            Loan Application
+        </h1>
+
+        <p class="muted">
+            Enter your financial details for the ML-based assessment.
+        </p>
+
+
+        <form
+            method="post"
+            class="form-card"
+        >
+
+            <h3>
+                Applicant Profile
+            </h3>
+
+
+            <div class="grid2">
+
+                <label>
+                    Dependents
+
+                    <input
+                        type="number"
+                        name="no_of_dependents"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Education
+
+                    <select name="education">
+                        <option>
+                            Graduate
+                        </option>
+
+                        <option>
+                            Not Graduate
+                        </option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Self Employed
+
+                    <select name="self_employed">
+                        <option>
+                            No
+                        </option>
+
+                        <option>
+                            Yes
+                        </option>
+                    </select>
+                </label>
+
+
+                <label>
+                    CIBIL Score
+
+                    <input
+                        type="number"
+                        name="cibil_score"
+                        min="300"
+                        max="900"
+                        required
+                    >
+                </label>
+
+            </div>
+
+
+            <h3>
+                Loan &amp; Income
+            </h3>
+
+
+            <div class="grid2">
+
+                <label>
+                    Annual Income (₹)
+
+                    <input
+                        type="number"
+                        name="income_annum"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Loan Amount (₹)
+
+                    <input
+                        type="number"
+                        name="loan_amount"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Loan Term (years)
+
+                    <input
+                        type="number"
+                        name="loan_term"
+                        min="1"
+                        max="40"
+                        required
+                    >
+                </label>
+
+            </div>
+
+
+            <h3>
+                Assets (₹)
+            </h3>
+
+
+            <div class="grid2">
+
+                <label>
+                    Residential Assets
+
+                    <input
+                        type="number"
+                        name="residential_assets_value"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Commercial Assets
+
+                    <input
+                        type="number"
+                        name="commercial_assets_value"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Luxury Assets
+
+                    <input
+                        type="number"
+                        name="luxury_assets_value"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Bank Assets
+
+                    <input
+                        type="number"
+                        name="bank_asset_value"
+                        min="0"
+                        required
+                    >
+                </label>
+
+            </div>
+
+
+            <button class="btn full">
+                Run ML Assessment
+            </button>
+
+        </form>
+
+
+        <p class="note">
+            The result is an academic ML prediction and should not
+            be used as a real lending decision. The credit score
+            entered here is one feature used by the model.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+
+{% block title %}
+SmartFinance | Smart Financial Decisions
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="eyebrow">SMART FINANCIAL SERVICES</div>
+
+            <h1>
+                Smart Financial Decisions
+                <span>for a Better Tomorrow</span>
+            </h1>
+
+            <p>
+                Apply for loans, assess financial risk, explore insurance
+                options and plan your repayments through one simple platform.
+            </p>
+
+            <div class="actions">
+                <a class="btn" href="{{ url_for('loan') }}">
+                    Apply for Loan
+                </a>
+
+                <a class="btn ghost" href="#services">
+                    Explore Services
+                </a>
+            </div>
+
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <span class="feature-icon">✓</span>
+                    <div>
+                        <strong>Secure &amp; Private</strong>
+                        <p>Your account information is protected.</p>
+                    </div>
+                </div>
+
+                <div class="hero-feature">
+                    <span class="feature-icon">⚡</span>
+                    <div>
+                        <strong>Fast &amp; Easy</strong>
+                        <p>A simple process from application to result.</p>
+                    </div>
+                </div>
+
+                <div class="hero-feature">
+                    <span class="feature-icon">✦</span>
+                    <div>
+                        <strong>AI-Powered</strong>
+                        <p>Machine learning helps assess applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-card">
+            <h2>Why Choose SmartFinance?</h2>
+
+            <ul>
+                <li>AI and ML based financial assessment</li>
+                <li>Simple and guided application process</li>
+                <li>Clear prediction and risk information</li>
+                <li>Manage applications from your dashboard</li>
+                <li>Useful financial planning tools</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section id="services" class="section">
+    <div class="container">
+        <div class="section-heading center-heading">
+            <div class="eyebrow">OUR SERVICES</div>
+
+            <h2>Financial tools built around your needs</h2>
+
+            <p>
+                Choose a service and get started with a simple,
+                guided experience.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <a class="card service-card" href="{{ url_for('loan') }}">
+                <div class="icon loan-icon">🏦</div>
+
+                <h3>Loan Approval</h3>
+
+                <p>
+                    Apply for a loan and receive an ML-based prediction
+                    with a financial risk assessment.
+                </p>
+
+                <span class="card-link">
+                    Apply Now →
+                </span>
+            </a>
+
+
+            <a
+                class="card service-card"
+                href="{{ url_for('vehicle_insurance') }}"
+            >
+                <div class="icon vehicle-icon">🚗</div>
+
+                <h3>Vehicle Insurance</h3>
+
+                <p>
+                    Enter your vehicle information and explore an
+                    academic insurance premium estimate.
+                </p>
+
+                <span class="card-link">
+                    Get Estimate →
+                </span>
+            </a>
+
+
+            <a
+                class="card service-card"
+                href="{{ url_for('medical_insurance') }}"
+            >
+                <div class="icon medical-icon">♥</div>
+
+                <h3>Medical Insurance</h3>
+
+                <p>
+                    Explore an academic premium estimate based on
+                    selected applicant information.
+                </p>
+
+                <span class="card-link">
+                    Get Estimate →
+                </span>
+            </a>
+
+
+            <a class="card service-card" href="{{ url_for('emi') }}">
+                <div class="icon emi-icon">₹</div>
+
+                <h3>EMI Calculator</h3>
+
+                <p>
+                    Calculate monthly EMI, total interest and
+                    total repayment for a loan.
+                </p>
+
+                <span class="card-link">
+                    Calculate Now →
+                </span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="how-it-works" class="section process-section">
+    <div class="container">
+
+        <div class="process-head">
+            <div>
+                <div class="eyebrow">HOW IT WORKS</div>
+
+                <h2>
+                    From application to decision,
+                    in four clear steps.
+                </h2>
+            </div>
+
+            <p>
+                A guided process keeps each stage simple,
+                understandable and easy to follow.
+            </p>
+        </div>
+
+
+        <div class="process-flow">
+
+            <div class="process-step">
+                <div class="step-number">01</div>
+
+                <div class="step-line"></div>
+
+                <h3>Create your account</h3>
+
+                <p>
+                    Register securely and access your personal dashboard.
+                </p>
+            </div>
+
+
+            <div class="process-step">
+                <div class="step-number">02</div>
+
+                <div class="step-line"></div>
+
+                <h3>Share your details</h3>
+
+                <p>
+                    Enter income, employment, loan, credit and
+                    asset information.
+                </p>
+            </div>
+
+
+            <div class="process-step">
+                <div class="step-number">03</div>
+
+                <div class="step-line"></div>
+
+                <h3>Get an assessment</h3>
+
+                <p>
+                    The system evaluates the information using
+                    prediction and risk logic.
+                </p>
+            </div>
+
+
+            <div class="process-step">
+                <div class="step-number">04</div>
+
+                <div class="step-line"></div>
+
+                <h3>Review your result</h3>
+
+                <p>
+                    See the prediction, confidence and financial
+                    risk score in one place.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="process-note">
+            <span>✓</span>
+
+            <div>
+                <strong>Clear at every step</strong>
+
+                <p>
+                    Review your applications and previous results
+                    from your dashboard.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="about" class="section about-section">
+    <div class="container two">
+
+        <div>
+            <div class="eyebrow">ABOUT SMARTFINANCE</div>
+
+            <h2>
+                One place for smarter financial planning.
+            </h2>
+        </div>
+
+        <div>
+            <p>
+                SmartFinance combines loan assessment, financial
+                risk analysis, insurance estimates and repayment
+                planning in one easy-to-use platform.
+            </p>
+
+            <p>
+                Users can create an account, submit applications,
+                review results and keep track of previous activity
+                from their dashboard.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

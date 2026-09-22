@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="description"
+        content="SmartFinance - loan assessment, financial risk analysis, insurance estimates and EMI planning."
+    >
+
+    <title>
+        {% block title %}SmartFinance{% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+
+<body>
+
+<nav class="nav">
+    <div class="container nav-inner">
+
+        <a
+            class="brand"
+            href="{{ url_for('home') }}"
+        >
+            <span class="brand-main">Smart</span>
+            <span class="brand-accent">Finance</span>
+
+            <small>
+                Smart Decisions, Secure Future
+            </small>
+        </a>
+
+
+        <div class="links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('home') }}#services">
+                Services
+            </a>
+
+            <a href="{{ url_for('home') }}#how-it-works">
+                How It Works
+            </a>
+
+            <a href="{{ url_for('contact') }}">
+                Contact Us
+            </a>
+
+
+            {% if logged_in %}
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a class="login-link" href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+                <a
+                    class="btn small"
+                    href="{{ url_for('register') }}"
+                >
+                    Register
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+</nav>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        <div class="container flashes">
+
+            {% for category, message in messages %}
+
+                <div class="flash {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+{% endwith %}
+
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+            <h3>SmartFinance</h3>
+
+            <p>
+                Smart tools for loan assessment, risk analysis,
+                insurance estimates and repayment planning.
+            </p>
+        </div>
+
+
+        <div>
+            <h4>Services</h4>
+
+            <a href="{{ url_for('loan') }}">
+                Loan Approval
+            </a>
+
+            <a href="{{ url_for('vehicle_insurance') }}">
+                Vehicle Insurance
+            </a>
+
+            <a href="{{ url_for('medical_insurance') }}">
+                Medical Insurance
+            </a>
+
+            <a href="{{ url_for('emi') }}">
+                EMI Calculator
+            </a>
+        </div>
+
+
+        <div>
+            <h4>Contact</h4>
+
+            <p>
+                mohitki7780264@gmail.com
+            </p>
+
+            <a href="{{ url_for('contact') }}">
+                Contact Us
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 SmartFinance · Smart financial tools
+    </div>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='js/main.js') }}"
+></script>
+
+</body>
+
+</html>

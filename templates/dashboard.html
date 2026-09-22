@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard | SmartFinance
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="dash-head">
+
+            <div>
+                <div class="eyebrow">
+                    DASHBOARD
+                </div>
+
+                <h1>
+                    Welcome, {{ user_name }}
+                </h1>
+
+                <p class="muted">
+                    Manage your applications and financial tools.
+                </p>
+            </div>
+
+
+            <a
+                class="btn"
+                href="{{ url_for('loan') }}"
+            >
+                New Loan Application
+            </a>
+
+        </div>
+
+
+        <div class="cards">
+
+            <a
+                class="card service-card"
+                href="{{ url_for('loan') }}"
+            >
+                <div class="icon loan-icon">
+                    🏦
+                </div>
+
+                <h3>
+                    Apply for Loan
+                </h3>
+
+                <p>
+                    Get an ML-based assessment.
+                </p>
+            </a>
+
+
+            <a
+                class="card service-card"
+                href="{{ url_for('emi') }}"
+            >
+                <div class="icon emi-icon">
+                    ₹
+                </div>
+
+                <h3>
+                    EMI Calculator
+                </h3>
+
+                <p>
+                    Plan your repayment.
+                </p>
+            </a>
+
+
+            <a
+                class="card service-card"
+                href="{{ url_for('vehicle_insurance') }}"
+            >
+                <div class="icon vehicle-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Vehicle Insurance
+                </h3>
+
+                <p>
+                    Estimate your premium.
+                </p>
+            </a>
+
+
+            <a
+                class="card service-card"
+                href="{{ url_for('medical_insurance') }}"
+            >
+                <div class="icon medical-icon">
+                    ♥
+                </div>
+
+                <h3>
+                    Medical Insurance
+                </h3>
+
+                <p>
+                    Estimate your premium.
+                </p>
+            </a>
+
+        </div>
+
+
+        <h2 class="mt">
+            Loan Application History
+        </h2>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Prediction
+                        </th>
+
+                        <th>
+                            Probability
+                        </th>
+
+                        <th>
+                            Risk
+                        </th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+
+                    {% for application in applications %}
+
+                    <tr>
+
+                        <td>
+                            LN{{ "%04d"|format(application["id"]) }}
+                        </td>
+
+                        <td>
+                            {{ application["created_at"][:10] }}
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="badge {{ application['prediction']|lower }}"
+                            >
+                                {{ application["prediction"] }}
+                            </span>
+
+                        </td>
+
+                        <td>
+                            {{ application["probability"] }}%
+                        </td>
+
+                        <td>
+                            {{ application["risk_score"] }}/100
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+                        <td
+                            colspan="5"
+                            class="center"
+                        >
+                            No applications yet.
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <p class="note">
+            The displayed risk score is a project-specific
+            financial indicator and is not an official CIBIL score.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
